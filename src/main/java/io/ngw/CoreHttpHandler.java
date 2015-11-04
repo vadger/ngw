@@ -96,6 +96,7 @@ class CoreHttpHandler implements HttpHandler {
       throw new RuntimeException(e);
     }
     handler.setContext(context);
+    injector.injectMembers(handler);
     bindParameters(handler, exchange);
     handler.onBeforeActionHandling();
     return handler;
