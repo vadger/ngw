@@ -27,7 +27,7 @@ public class RouteResolver {
     return null;
   }
 
-  public String reverseResole(Class<? extends ActionHandler> handlerClazz) {
+  public String reverse(Class<? extends ActionHandler> handlerClazz) {
     for (Router router : routers) {
       Router.Path path = router.reversed.get(handlerClazz);
       if (path  != null) return path.path;

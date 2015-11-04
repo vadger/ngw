@@ -55,7 +55,7 @@ public class RedirectResult implements Result {
 
   public String getLocation() {
     BindersProvider bindersProvider = context.getInjector().getInstance(BindersProvider.class);
-    StringBuilder location = new StringBuilder(context.getInjector().getInstance(RouteResolver.class).reverseResole(handlerTemplate.getClass()));
+    StringBuilder location = new StringBuilder(context.getInjector().getInstance(RouteResolver.class).reverse(handlerTemplate.getClass()));
 
     Stream<String> keyValue = Utils.getAllFields(handlerTemplate)
         .filter(f -> f.isAnnotationPresent(In.class))
